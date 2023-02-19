@@ -4,7 +4,7 @@ if not nvim_treesitter_config_status then
 end
 
 nvim_treesitter_config.setup({
-	ensure_installed = { "lua", "rust", "toml" },
+	ensure_installed = { "lua", "rust", "toml", "markdown", "markdown_inline" },
 	auto_install = true,
 	highlight = {
 		enable = true,

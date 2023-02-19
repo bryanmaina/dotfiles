@@ -12,6 +12,7 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
 	sources = {
 		formatting.json_tool,
+		formatting.rustfmt,
 		formatting.gofmt,
 		formatting.prettier,
 		formatting.stylua,

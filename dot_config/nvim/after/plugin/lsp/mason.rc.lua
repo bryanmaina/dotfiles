@@ -30,11 +30,10 @@ mason_lspconfig.setup({
 		"lemminx",
 		"yamlls",
 		"emmet_ls",
-		"terraformls",
 		"html",
 		"cssls",
 		"tailwindcss",
-		"sumneko_lua",
+		"lua_ls",
 		"dockerls",
 		"rust_analyzer",
 	},
@@ -42,12 +41,13 @@ mason_lspconfig.setup({
 
 mason_null_ls.setup({
 	ensure_installed = {
-		"hadolint",
+		-- "hadolint",
 		"prettier",
 		"stylua",
 		"eslint_d",
 		"sql_formatter",
 		"shfmt",
+		"rustfmt",
 		"solhint",
 		"gitlint",
 	},

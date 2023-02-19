@@ -30,11 +30,11 @@ local on_attach = function(client, bufnr)
 	-- set keybinds
 	buf_set_keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
 	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	buf_set_keymap("n", "gd", "<cmd> Lspsaga lsp_finder<CR>", opts)
+	buf_set_keymap("n", "gd", "<cmd>Lspsaga lsp_finder<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", opts)
 	-- buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	buf_set_keymap("i", "<S-F1>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	buf_set_keymap("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	buf_set_keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 	buf_set_keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 	buf_set_keymap("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
@@ -115,22 +115,22 @@ lspconfig["clangd"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["sumneko_lua"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = { -- custom settings for lua
-		Lua = {
-			-- make the language server recognize "vim" global
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				-- make the language server aware of runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-		},
-	},
-})
+-- lspconfig["sumneko_lua"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	settings = { -- custom settings for lua
+-- 		Lua = {
+-- 			-- make the language server recognize "vim" global
+-- 			diagnostics = {
+-- 				globals = { "vim" },
+-- 			},
+-- 			workspace = {
+-- 				-- make the language server aware of runtime files
+-- 				library = {
+-- 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+-- 					[vim.fn.stdpath("config") .. "/lua"] = true,
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- })
